@@ -3,7 +3,8 @@ package com.example.projet2024.dto;
 import java.util.Date;
 import java.util.Set;
 
-import com.example.projet2024.entite.TimeTable;
+
+import com.example.projet2024.entite.Meet;
 import lombok.Data;
 
 @Data
@@ -13,6 +14,5 @@ public class TimeTableDto {
     private Date endDate;
     private Set<MeetDto> meets;
     private GroupDto group;
-
 
 }

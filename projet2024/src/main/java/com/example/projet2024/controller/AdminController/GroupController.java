@@ -1,4 +1,4 @@
-package com.example.projet2024.controller.UserController;
+package com.example.projet2024.controller.AdminController;
 
 
 import com.example.projet2024.dto.GroupDto;
@@ -13,7 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/admin")
 @RequiredArgsConstructor
 public class GroupController {
     private final GroupService groupService;

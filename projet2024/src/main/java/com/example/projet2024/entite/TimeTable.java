@@ -1,5 +1,7 @@
 package com.example.projet2024.entite;
 
+
+import com.example.projet2024.dto.TimeTableDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,18 +16,31 @@ import java.util.Set;
 public class TimeTable {
     @Id
     @Column(name = "TimeTableID")
-    @GeneratedValue(strategy =GenerationType.IDENTITY)
-    private Long TimeTableID ;
-    @Temporal (TemporalType.DATE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long timeTableID;
+
+    @Temporal(TemporalType.DATE)
     @Column(name = "StartDate")
-    private Date StartDate ;
-    @Temporal (TemporalType.DATE)
+    private Date startDate;
+
+    @Temporal(TemporalType.DATE)
     @Column(name = "EndDate")
-    private Date EndDate ;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="timetable")
-    @JoinColumn(name = "TM_fk", referencedColumnName = "TimeTableID")
-    private Set<Meet> Meets;
-    @OneToOne(mappedBy="timetable")
+    private Date endDate;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "timeTable")
+    private Set<Meet> meets;
+
+    @OneToOne(mappedBy = "timeTable")
     private Group group;
 
+    public TimeTableDto getDto() {
+        TimeTableDto timeTableDto = new TimeTableDto();
+        timeTableDto.setTimeTableId(timeTableID);
+        timeTableDto.setStartDate(startDate);
+        timeTableDto.setEndDate(endDate);
+        //timeTableDto.setMeets(meets);
+        //timeTableDto.setGroup(group);
+        return timeTableDto;
+    }
 }
+
