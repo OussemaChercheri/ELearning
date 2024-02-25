@@ -1,4 +1,4 @@
-package com.example.projet2024.controller;
+package com.example.projet2024.controller.UserController;
 
 
 
@@ -18,13 +18,6 @@ public class TimeTableController {
     @Autowired
     private MeetRepo meetRepo;
 
-    @PostMapping("/saveTimeTable")
-    public String saveTimeTable(@RequestBody TimeTable timeTable){
-        System.out.println("TimeTable save called...");
 
-        // a new TimeTable
-
-        TimeTable timeTable1 = new TimeTable(timeTable.getEndDate(), timeTable.getStartDate());
-    }
 
 }

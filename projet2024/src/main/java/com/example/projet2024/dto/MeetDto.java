@@ -2,6 +2,7 @@ package com.example.projet2024.dto;
 
 import java.util.Date;
 
+import com.example.projet2024.entite.Meet;
 import lombok.Data;
 
 @Data
@@ -11,4 +12,6 @@ public class MeetDto {
     private Date startDate;
     private Date endDate;
     private TimeTableDto timeTable;
+
+
 }

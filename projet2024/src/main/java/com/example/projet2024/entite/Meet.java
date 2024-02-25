@@ -24,7 +24,8 @@ public class Meet {
     @Temporal (TemporalType.DATE)
     @Column(name = "EndDate")
     private Date EndDate ;
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "TimeTableID")
     TimeTable timetable;
 
 }

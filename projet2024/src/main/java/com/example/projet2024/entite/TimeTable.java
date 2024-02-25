@@ -27,4 +27,5 @@ public class TimeTable {
     private Set<Meet> Meets;
     @OneToOne(mappedBy="timetable")
     private Group group;
+
 }
